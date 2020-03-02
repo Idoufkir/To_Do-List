@@ -3,10 +3,10 @@ function Add(){
     var val = document.getElementById('inp').value;
     var inpu = document.createElement("input");
     inpu.setAttribute("type","checkbox");
-    inpu.setAttribute("id","chek");
+    inpu.setAttribute("class","chek");
 
     var spa = document.createElement("span");
-    spa.setAttribute("id","vv");
+    spa.setAttribute("class","vv");
     var valspan = document.createTextNode(val);
     var sautLine = document.createElement("br");
     container.appendChild(sautLine);
@@ -18,16 +18,21 @@ function Add(){
 
   }
   function cheek(){
-    var ch = document.getElementById("chek");
-    var spaan = document.getElementById("vv");
-    if(ch.checked)
+    var ch = document.getElementsByClassName("chek");
+    var spaan = document.getElementsByClassName("vv");
+    // boucle poure verefier check (ch) 
+    for(var i = 0; i < ch.length; i++)
     {
-
-      spaan.style.textDecoration = "line-through";
+      if(ch[i].checked)
+      {
+  
+        spaan[i].style.textDecoration = "line-through";
+      }
+      else
+      {
+          spaan[i].style.textDecoration = "none";
+      }
     }
-    else
-    {
-        spaan.style.textDecoration = "none";
-    }
+ 
 
   }
